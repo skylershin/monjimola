@@ -21,18 +21,13 @@ public class GM : MonoBehaviour {
 		//health
 
 		health = new Health ();
-		health.addHealthListener (new HealthListener {
-			void onAddHealth(int currentHealth) {
-				
-			}
-		});
 	}
 	
 	// Update is called once per frame
 	public void Update () {
 		//touch input
 		if (Input.anyKeyDown) {
-			health.airCondition (tapDamage);
+			health.onAdd (tapDamage);
 			Debug.Log ("tapping");
 			print ("taptap");
 		}
@@ -62,6 +57,8 @@ public class GM : MonoBehaviour {
 		
 	public void clickDuster()
 	{
+		//TODO: error CS0120: An object reference is required to access non-static member `Skill.UseSkill()'
+		Skill.UseSkill();
 		Debug.Log ("Duster");
 	}
 
