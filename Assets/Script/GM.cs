@@ -29,7 +29,7 @@ public class GM : MonoBehaviour {
 		if (Input.anyKeyDown) {
 			health.onAdd (tapDamage);
 			Debug.Log ("tapping");
-			print ("taptap");
+			print (health.currentHealth);
 		}
 	}
 
@@ -58,6 +58,8 @@ public class GM : MonoBehaviour {
 	public void clickDuster()
 	{
 		//TODO: error CS0120: An object reference is required to access non-static member `Skill.UseSkill()'
+		//TODO: skill damege 추가
+		//TODO: tab 영역 추가
 		Skill.UseSkill();
 		Debug.Log ("Duster");
 	}
@@ -81,5 +83,4 @@ public class GM : MonoBehaviour {
 	{
 		Debug.Log ("Car");
 	}
-
 }

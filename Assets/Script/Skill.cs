@@ -7,6 +7,9 @@ public class Skill : MonoBehaviour
 	public Image skillFilter;
 	public float coolTime;
 
+	public int skillDamage;
+	private Health health;
+	 
 	private bool canUseSkill = true;
 
 	void start()
@@ -20,6 +23,7 @@ public class Skill : MonoBehaviour
 		{
 			skillFilter.fillAmount = 1;
 			StartCoroutine("Cooltime");
+			health.onAdd (skillDamage); 
 
 			canUseSkill = false;
 

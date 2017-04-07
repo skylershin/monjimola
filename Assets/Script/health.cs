@@ -1,7 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-
-
 	
 public class Health {
 	public int startingHealth = 1;
@@ -13,11 +11,13 @@ public class Health {
 	public void onAdd(int healthAmount) {
 		currentHealth += healthAmount;
 
-		mListener.onRemoveHealth (currentHealth);
+		//mListener.onRemoveHealth (currentHealth);
 		//health bar
 	}
 
+	/*
 	public void addHealthListener(HealthListener healthListener) {
 		mListener = healthListener;
 	}
+	*/
 }
