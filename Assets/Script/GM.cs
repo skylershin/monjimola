@@ -8,16 +8,34 @@ public class GM : MonoBehaviour {
 	enum GameTime {Day, Night};
 	private GameTime gameTime;
 
+	public int tapDamage = 50;
+	private Health health;
+	//TODO healthbar gameobject 
+
 	// Use this for initialization
 	void Start () {
 		// initial background color
 		gameTime = GameTime.Day;
 		StartCoroutine (Repeating ());	
+
+		//health
+
+		health = new Health ();
+		health.addHealthListener (new HealthListener {
+			void onAddHealth(int currentHealth) {
+				
+			}
+		});
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	public void Update () {
+		//touch input
+		if (Input.anyKeyDown) {
+			health.airCondition (tapDamage);
+			Debug.Log ("tapping");
+			print ("taptap");
+		}
 	}
 
 	IEnumerator Repeating() {
@@ -41,7 +59,7 @@ public class GM : MonoBehaviour {
 				break;
 		}
 	}
-
+		
 	public void clickDuster()
 	{
 		Debug.Log ("Duster");
@@ -66,4 +84,5 @@ public class GM : MonoBehaviour {
 	{
 		Debug.Log ("Car");
 	}
+
 }

@@ -1,14 +1,23 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class health : MonoBehaviour {
+
+	
+public class Health {
 	public int startingHealth = 1;
 	public int currentHealth;
 	public const int minHealth = 1;
-	
-	public void airCondition(int amount) {
-		currentHealth -= amount;
 
+	private HealthListener mListener;
+
+	public void onAdd(int healthAmount) {
+		currentHealth += healthAmount;
+
+		mListener.onRemoveHealth (currentHealth);
 		//health bar
+	}
+
+	public void addHealthListener(HealthListener healthListener) {
+		mListener = healthListener;
 	}
 }
