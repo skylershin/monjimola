@@ -41,4 +41,29 @@ public class GM : MonoBehaviour {
 				break;
 		}
 	}
+
+	public void clickDuster()
+	{
+		Debug.Log ("Duster");
+	}
+
+	public void clickTabaco()
+	{
+		Debug.Log ("Tabaco");
+	}
+
+	public void clickGrilledFish()
+	{
+		Debug.Log ("GrilledFish");
+	}
+
+	public void clickFire()
+	{
+		Debug.Log ("Fire");
+	}
+
+	public void clickCar()
+	{
+		Debug.Log ("Car");
+	}
 }
