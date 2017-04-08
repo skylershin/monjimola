@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class Skill : MonoBehaviour 
+public class Skill: MonoBehaviour 
 {
 	public Image skillFilter;
 	public float coolTime;
@@ -17,13 +17,20 @@ public class Skill : MonoBehaviour
 		skillFilter.fillAmount = 0;
 	}
 
+	void update()
+	{
+		if (Input.anyKeyDown) {
+			UseSkill ();
+		}
+	}
+
 	public void UseSkill()
 	{
 		if (canUseSkill)
 		{
 			skillFilter.fillAmount = 1;
 			StartCoroutine("Cooltime");
-			health.onAdd (skillDamage); 
+			Health.onAdd (skillDamage); 
 
 			canUseSkill = false;
 
@@ -41,7 +48,6 @@ public class Skill : MonoBehaviour
 		}
 
 		canUseSkill = true;
-
 		yield break;
 	}
 }
